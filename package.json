@@ -52,13 +52,9 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "commit-msg": "yarn commitlint --edit $1"
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
+  "commitlint": "{extends:['@commitlint/config-conventional']}",
   "lint-staged": {
     "*.{js,css,md,ts,tsx}": "prettier --write"
   }
