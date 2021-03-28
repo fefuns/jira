@@ -52,7 +52,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "commit-msg": "yarn commitlint --edit $1"
   },
   "config": {
     "commitizen": {
