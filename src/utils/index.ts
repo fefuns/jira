@@ -6,7 +6,7 @@ export const useMount = (callback: () => void) => {
     callback();
   }, []);
 };
-export const useDebounce = (value: any, delay?: number) => {
+export const useDebounce = (value: unknown, delay?: number): any => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     // 每次在value变化以后，设置一个定时器
@@ -41,7 +41,7 @@ export const getParams = (url: any) => {
  * @param val
  * @returns
  */
-export const isFalsy = (val: any) => (val === 0 ? false : !val);
+export const isFalsy = (val: unknown) => (val === 0 ? false : !val);
 /**
  * 清楚掉对象中值为空的项
  * @param obj
