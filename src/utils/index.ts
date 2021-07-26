@@ -21,7 +21,8 @@ export const useMount = (callback: () => void) => {
     // eslint-disable-next-line
   }, []);
 };
-export const useDebounce = (value: unknown, delay?: number): any => {
+// 使用泛型的例子
+export const useDebounce = <V>(value: V, delay?: number) => {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
     // 每次在value变化以后，设置一个定时器
