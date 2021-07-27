@@ -1,3 +1,4 @@
+import { useAuth } from "context/auth-context";
 import { stringify } from "qs";
 import * as auth from "auth-provider";
 
@@ -9,7 +10,7 @@ interface Config extends RequestInit {
 }
 export const http = async (
   endpoint: string,
-  { data, token, headers, ...customConfig }: Config
+  { data, token, headers, ...customConfig }: Config = {}
 ) => {
   const config = {
     method: "GET",
@@ -20,7 +21,7 @@ export const http = async (
     ...customConfig,
   };
   if (config.method.toLocaleLowerCase() === "get") {
-    endpoint += `${stringify(data)}`;
+    endpoint += `?${stringify(data)}`;
   } else {
     config.body = JSON.stringify(data || {});
   }
@@ -39,4 +40,11 @@ export const http = async (
       return Promise.reject(data);
     }
   });
+};
+
+export const useHttp = () => {
+  const { user } = useAuth();
+  // TS 操作符
+  return (...[endpoint, config]: Parameters<typeof http>) =>
+    http(endpoint, { ...config, token: user?.token });
 };
