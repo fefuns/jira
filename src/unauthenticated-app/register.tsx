@@ -20,7 +20,7 @@ export const RegisterScreen = () => {
       >
         <Input placeholder="密码" type="password" />
       </Form.Item>
-      <Button type="primary" htmlType="submit">
+      <Button block type="primary" htmlType="submit">
         注册
       </Button>
     </Form>

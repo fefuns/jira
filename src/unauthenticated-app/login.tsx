@@ -20,7 +20,7 @@ export const LoginScreen = () => {
       >
         <Input placeholder="密码" type="password" />
       </Form.Item>
-      <Button type="primary" htmlType="submit">
+      <Button block type="primary" htmlType="submit">
         登录
       </Button>
     </Form>
