@@ -1,5 +1,4 @@
 import { Table } from "antd";
-import { spawn } from "child_process";
 import React from "react";
 import { User } from "./search-panel";
 interface Project {
@@ -17,6 +16,7 @@ export const List = ({ list, users }: ListProps) => {
   return (
     <Table
       pagination={false}
+      rowKey="id"
       columns={[
         {
           title: "名称",

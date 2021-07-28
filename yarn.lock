@@ -6486,6 +6486,7 @@ jest@26.6.0:
 jira-dev-tool@^1.7.61:
   version "1.7.61"
   resolved "https://registry.npm.taobao.org/jira-dev-tool/download/jira-dev-tool-1.7.61.tgz#32477c1e0f9f9f46ad5ffd61409ac05a1422c17c"
+  integrity sha1-Mkd8Hg+fn0atX/1hQJrAWhQiwXw=
   dependencies:
     antd "^4.9.1"
     msw "^0.24.1"
